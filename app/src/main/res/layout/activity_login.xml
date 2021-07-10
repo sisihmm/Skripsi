@@ -4,30 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Login">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:layout_height="match_parent">
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:layout_weight="4"
+            android:src="@color/bg"
             android:scaleType="centerCrop"
-            android:src="@color/bg" />
-
-        <View
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="0dp" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="571dp"
+        android:layout_height="516dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -35,6 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="?actionBarSize"
             android:text="Lesson English"
             android:textColor="#FFFFFF"
             android:textSize="40sp"
@@ -42,20 +41,6 @@
 
 
         <EditText
-            android:id="@+id/etfullname"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:layout_margin="20dp"
-            android:background="@drawable/rounded_corner"
-            android:hint="FullName"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:textColor="#fff"
-            android:textColorHint="#eee"
-            android:textSize="17sp" />
-
-        <EditText
-            android:id="@+id/etemail"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_margin="20dp"
@@ -64,12 +49,11 @@
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:textColor="#fff"
-            android:inputType="textEmailAddress"
             android:textColorHint="#eee"
+            android:inputType="textEmailAddress"
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/etpassword"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_margin="20dp"
@@ -82,29 +66,22 @@
             android:textColorHint="#eee"
             android:textSize="17sp" />
 
-        <EditText
-            android:id="@+id/etcpassword"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:layout_margin="20dp"
-            android:background="@drawable/rounded_corner"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:textColor="#fff"
-            android:textColorHint="#eee"
-            android:textSize="17sp" />
-
         <Button
-            android:id="@+id/btsignup"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:background="@drawable/round_corner_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="sign up"
+            android:text="sign in"
             android:textColor="#777" />
+
+        <TextView
+            android:id="@+id/tvForget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Forgot Password?"
+            android:textColor="#fff" />
 
     </LinearLayout>
 
@@ -118,7 +95,7 @@
 
         <TextView
             android:layout_marginBottom="10dp"
-            android:text="Back To Login"
+            android:text="Or Signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
