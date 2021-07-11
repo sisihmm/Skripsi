@@ -22,34 +22,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnItemSelectedListener(navListener);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.layouthomebt, new HomeFragment()).commit();
 
     }
-public NavigationBarView.OnItemSelectedListener navListener = new BottomNavigationView.OnItemSelectedListener() {
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment selectedFragment = null;
-        switch (item.getItemId()){
-            case R.id.home:
-                selectedFragment = new HomeFragment();
-                break;
-
-            case R.id.person:
-                selectedFragment = new AccountFragment();
-                break;
-
-            case R.id.settings:
-                selectedFragment = new HelpFragment();
-                break;
-
-        }
-        getSupportFragmentManager().beginTransaction().replace(R.id.layouthomebt, selectedFragment).commit();
-
-        return true;
-    }
-};
 
 }

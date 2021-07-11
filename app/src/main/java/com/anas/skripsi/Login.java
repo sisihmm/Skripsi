@@ -95,18 +95,20 @@ public class Login extends AppCompatActivity {
                 tvForget.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        openDialog();
+
                     }
                 });
             }
 
-            //forget password
-            public void openDialog() {
-                forget_dialog forget_Dialog = new forget_dialog();
-                forget_Dialog.show(getSupportFragmentManager(), "Forget Password");
-            }
-
         });
+        tvRegis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Register.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
 
