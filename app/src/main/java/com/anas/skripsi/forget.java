@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class forget extends AppCompatActivity {
@@ -47,19 +49,18 @@ public class forget extends AppCompatActivity {
             public void onClick(View v) {
                 if (TextUtils.isEmpty(etFmail.getText().toString().trim())){
                     etFmail.setError("kosong");
-                }
 
-                fAuth.sendPasswordResetEmail(etFmail.getText().toString().trim()).addOnSuccessListener(new OnSuccessListener<Void>() {
+                fAuth.sendPasswordResetEmail(etFmail.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(forget.this,"send email succes", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(forget.this,"email failed send", Toast.LENGTH_SHORT).show();
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(forget.this,"send to your email", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),Login.class));
                     }
                 });
+                }else {
+                    Toast.makeText(forget.this,"failed send your email", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
