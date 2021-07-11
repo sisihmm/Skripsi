@@ -91,20 +91,21 @@ public class Login extends AppCompatActivity {
                     }
 
                 });
-
-                tvForget.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
             }
-
         });
+
         tvRegis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Register.class);
+                startActivity(intent);
+            }
+        });
+
+        tvForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, forget.class);
                 startActivity(intent);
             }
         });
