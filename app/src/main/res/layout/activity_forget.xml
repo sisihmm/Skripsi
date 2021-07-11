@@ -36,7 +36,8 @@
             android:layout_margin="?actionBarSize"
             android:text="Forget Password"
             android:textColor="#FFFFFF"
-            android:textSize="29sp" />
+            android:textSize="29sp"
+            android:textStyle="bold|italic" />
 
 
         <EditText

@@ -45,7 +45,7 @@
             android:layout_margin="?actionBarSize"
             android:text="Lesson English"
             android:textColor="#FFFFFF"
-            android:textSize="37sp"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
         <TextView
@@ -54,7 +54,7 @@
             android:layout_centerHorizontal="true"
             android:text="3rd grade elementary school"
             android:textColor="#FFFFFF"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:textStyle="bold|italic" />
 
 
