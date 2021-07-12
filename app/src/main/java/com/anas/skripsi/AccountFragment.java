@@ -1,14 +1,20 @@
 package com.anas.skripsi;
 
+import android.accounts.Account;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,8 +39,8 @@ public class AccountFragment extends Fragment {
 
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+//    private String mParam1;
+//    private String mParam2;
 
     public AccountFragment() {
         // Required empty public constructor
@@ -52,8 +58,7 @@ public class AccountFragment extends Fragment {
     public static AccountFragment newInstance(String param1, String param2) {
         AccountFragment fragment = new AccountFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -61,10 +66,8 @@ public class AccountFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
     }
 
     private FirebaseAuth mAuth;
@@ -72,9 +75,38 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_account, null);
-        TextView but = (TextView) root.findViewById(R.id.tvcallemail);
+
+        ViewGroup vgroup  = (ViewGroup) inflater.inflate(R.layout.fragment_account, null);
+        TextView hmail = (TextView) vgroup.findViewById(R.id.tvcallemail);
+        CardView cvEmail = (CardView) vgroup.findViewById(R.id.cvCemail);
+        CardView cvPass = (CardView) vgroup.findViewById(R.id.cvCpassw);
+        CardView cvLogout = (CardView) vgroup.findViewById(R.id.cvLogout);
+
+
+        cvEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity().getApplication(),change_email.class);
+            }
+        });
+
+        cvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity().getApplication(),Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
+
+        cvPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity().getApplication(),change_password.class);
+            }
+        });
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser userDb = mAuth.getCurrentUser();
@@ -83,12 +115,13 @@ public class AccountFragment extends Fragment {
         dbActivity.collection("users").document(userDb.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                Log.d("USERS", "onComplete: "+task.getResult().getString("email"));
-                but.setText(task.getResult().getString("email"));
-            }
-        });
+                Log.d("USERS", "onComplete: " + task.getResult().getString("email"));
+                hmail.setText(task.getResult().getString("email"));
 
-        return root;
-//        return inflater.inflate(R.layout.fragment_account, container, false);
+            }
+
+
+        });
+        return vgroup;
     }
 }
