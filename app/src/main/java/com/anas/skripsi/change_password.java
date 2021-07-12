@@ -46,7 +46,7 @@ public class change_password extends AppCompatActivity {
                 @Override
                 public void onSuccess(Void unused) {
                     Toast.makeText(change_password.this, "Password telah diubah", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),Home.class));
+                    startActivity(new Intent(getApplicationContext(),Login.class));
                     finish();
                 }
             }).addOnFailureListener(e -> Toast.makeText(change_password.this, "Password gagal diubah",Toast.LENGTH_SHORT).show());

@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class change_email extends AppCompatActivity {
 
-    EditText newEmail, cnEmail;
+    EditText newEmail, cnEmail, newName;
     Button btNemail;
     FirebaseAuth auth;
 
@@ -34,15 +34,21 @@ public class change_email extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_email);
 
+        newName = findViewById(R.id.ncName);
         newEmail = findViewById(R.id.nEmail);
         cnEmail = findViewById(R.id.Cnemail);
         btNemail = findViewById(R.id.buttonsEmai);
         auth = FirebaseAuth.getInstance();
 
         btNemail.setOnClickListener(v -> {
+            String namenew = newName.getText().toString().trim();
             String emailnew = newEmail.getText().toString().trim();
             String cemailnew = cnEmail.getText().toString().trim();
 
+            if (TextUtils.isEmpty(namenew)) {
+                newName.setError("email kosong");
+                return;
+            }
             if (TextUtils.isEmpty(emailnew)) {
                 newEmail.setError("email kosong");
                 return;
@@ -57,15 +63,14 @@ public class change_email extends AppCompatActivity {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 Map<String, Object> userNew = new HashMap<>();
                 userNew.put("email", newEmail.getText().toString());
+                userNew.put("level", "1");
+                userNew.put("name", newName.getText().toString());
                 db.collection("users").document(user.getUid()).set(userNew).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(change_email.this, "berhasil update email", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), Login.class));
-                        Intent i = getIntent();
-                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(i);
+                        Toast.makeText(change_email.this, "email telah diubah", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),Login.class));
+                        finish();
                     }
                 }).addOnFailureListener(e -> Toast.makeText(change_email.this, "gagal update email", Toast.LENGTH_SHORT).show());
 

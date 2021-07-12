@@ -33,7 +33,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etName = findViewById(R.id.etfullname);
+        etName = findViewById(R.id.etname);
         etEmail = findViewById(R.id.etemail);
         etPassword = findViewById(R.id.etpassword);
         etCpassword = findViewById(R.id.etcpassword);
@@ -60,15 +60,15 @@ public class Register extends AppCompatActivity {
                 return;
             }
             if (TextUtils.isEmpty(email)){
-                etEmail.setError("nama email");
+                etEmail.setError(" email kosong");
                 return;
             }
             if (TextUtils.isEmpty(password)){
-                etPassword.setError("nama password");
+                etPassword.setError(" password kosong");
                 return;
             }
             if (!password.equals(cpassword)){
-                etCpassword.setError("nama kosong");
+                etCpassword.setError("password tidak sama");
                 return;
             }
             fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
