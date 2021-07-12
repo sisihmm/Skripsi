@@ -19,14 +19,11 @@ public class MainActivity extends AppCompatActivity {
         splash = findViewById(R.id.psplash);
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this, Login.class);
-                splash.setProgress(0);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            splash.setProgress(0);
+            startActivity(intent);
+            finish();
         },2000);
     }
 }

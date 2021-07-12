@@ -45,72 +45,63 @@ public class Login extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
 
-        bLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = etEmail.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
+        bLogin.setOnClickListener(v -> {
+            String email = etEmail.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
-                    etEmail.setError("Email Kosang");
-                    return;
-                }
-                if (TextUtils.isEmpty(password)) {
-                    etPassword.setError("password Kosang");
-                    return;
-                }
+            if (TextUtils.isEmpty(email)) {
+                etEmail.setError("Email Kosang");
+                return;
+            }
+            if (TextUtils.isEmpty(password)) {
+                etPassword.setError("password Kosang");
+                return;
+            }
 
-                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            db.collection("users").document(task.getResult().getUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    String level = task.getResult().getString("level");
-                                    Boolean isAdmin = level.equals("1");
-                                    if (isAdmin) {
-                                        Log.d("LOGIN", "onComplete: " + task.getResult().getString("level"));
-                                        Toast.makeText(Login.this, "user Login", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), Home.class);
-                                        intent.putExtra("level", level);
-                                        startActivity(intent);
-                                    } else {
-                                        Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), studentHome.class);
-                                        intent.putExtra("level", level);
-                                        startActivity(intent);
-                                    }
-
+            fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("users").document(task.getResult().getUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                String level = task.getResult().getString("level");
+                                Boolean isAdmin = level.equals("1");
+                                if (isAdmin) {
+                                    Log.d("LOGIN", "onComplete: " + task.getResult().getString("level"));
+                                    Toast.makeText(Login.this, "user Login", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), Home.class);
+                                    intent.putExtra("level", level);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), studentHome.class);
+                                    intent.putExtra("level", level);
+                                    startActivity(intent);
                                 }
-                            });
+
+                            }
+                        });
 
 
-                        } else {
-                            Toast.makeText(Login.this, "gagal login !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(Login.this, "gagal login !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
-                        }
                     }
+                }
 
-                });
-            }
+            });
         });
 
-        tvRegis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Register.class);
-                startActivity(intent);
-            }
+        tvRegis.setOnClickListener(v -> {
+            Intent intent = new Intent(Login.this, Register.class);
+            startActivity(intent);
         });
 
-        tvForget.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, forget.class);
-                startActivity(intent);
-            }
+        tvForget.setOnClickListener(v -> {
+            Intent intent = new Intent(Login.this, forget.class);
+            startActivity(intent);
         });
 
     }

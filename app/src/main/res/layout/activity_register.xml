@@ -13,7 +13,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="511dp"
             android:layout_weight="4"
             android:scaleType="centerCrop"
             android:src="@color/bg" />
@@ -127,10 +127,11 @@
 
         <TextView
             android:id="@+id/tvblogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="Back To Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -49,59 +49,50 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
-        bRegis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = etName.getText().toString().trim();
-                String email = etEmail.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
-                String cpassword = etCpassword.getText().toString().trim();
+        bRegis.setOnClickListener(v -> {
+            String name = etName.getText().toString().trim();
+            String email = etEmail.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
+            String cpassword = etCpassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(name)){
-                    etName.setError("nama kosong");
-                    return;
-                }
-                if (TextUtils.isEmpty(email)){
-                    etEmail.setError("nama email");
-                    return;
-                }
-                if (TextUtils.isEmpty(password)){
-                    etPassword.setError("nama password");
-                    return;
-                }
-                if (!password.equals(cpassword)){
-                    etCpassword.setError("nama kosong");
-                    return;
-                }
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Map<String, Object> user = new HashMap<>();
-                            user.put("name", name);
-                            user.put("email", email);
-                            user.put("level", "1");
-
-                            db.collection("users").document(task.getResult().getUser().getUid()).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    Toast.makeText(Register.this,"User Createed",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),Login.class));
-                                }
-                            });
-                        }else{
-                            Toast.makeText(Register.this,"User Failed Regist", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+            if (TextUtils.isEmpty(name)){
+                etName.setError("nama kosong");
+                return;
             }
-        });
-            tvLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(Register.this, Login.class);
-                        startActivity(intent);
+            if (TextUtils.isEmpty(email)){
+                etEmail.setError("nama email");
+                return;
+            }
+            if (TextUtils.isEmpty(password)){
+                etPassword.setError("nama password");
+                return;
+            }
+            if (!password.equals(cpassword)){
+                etCpassword.setError("nama kosong");
+                return;
+            }
+            fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()){
+                    Map<String, Object> user = new HashMap<>();
+                    user.put("name", name);
+                    user.put("email", email);
+                    user.put("level", "1");
+
+                    db.collection("users").document(task.getResult().getUser().getUid()).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(Register.this,"User Createed",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),Login.class));
+                        }
+                    });
+                }else{
+                    Toast.makeText(Register.this,"User Failed Regist", Toast.LENGTH_SHORT).show();
                 }
+            });
+        });
+            tvLogin.setOnClickListener(v -> {
+                Intent intent = new Intent(Register.this, Login.class);
+                    startActivity(intent);
             });
 
     }

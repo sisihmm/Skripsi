@@ -83,29 +83,20 @@ public class AccountFragment extends Fragment {
         CardView cvLogout = (CardView) vgroup.findViewById(R.id.cvLogout);
 
 
-        cvEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity().getApplication(),change_email.class);
-            }
+        cvEmail.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity().getApplication(),change_email.class);
         });
 
-        cvLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getActivity().getApplication(),Login.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
+        cvLogout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getActivity().getApplication(),Login.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
 
-        cvPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity().getApplication(),change_password.class);
-            }
+        cvPass.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity().getApplication(),change_password.class);
         });
 
         mAuth = FirebaseAuth.getInstance();
