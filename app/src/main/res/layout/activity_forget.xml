@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
         <ImageView
             android:layout_weight="4"
-            android:src="@color/bg"
+            android:src="@color/deepPurple"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
