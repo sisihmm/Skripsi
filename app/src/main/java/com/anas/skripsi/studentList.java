@@ -54,29 +54,30 @@ public class studentList extends AppCompatActivity {
     }
 
     private void EventChangeListener() {
-        db.collection("users").orderBy("name", Query.Direction.ASCENDING)
+        db.collection("users").whereGreaterThan("level","1").orderBy("level", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
-                if (error != null){
+                if (error != null) {
 
                     if (progressDialog.isShowing())
                         progressDialog.dismiss();
                     Log.e("error", error.getMessage());
                     return;
-                }
-                for(DocumentChange dc : value.getDocumentChanges()){
-                    if (dc.getType() == DocumentChange.Type.ADDED){
 
-                        studentArrayList.add(dc.getDocument().toObject(studentModel.class));
+                }
+
+                    for (DocumentChange dc : value.getDocumentChanges()) {
+                       if (dc.getType() == DocumentChange.Type.ADDED) {
+                           studentArrayList.add(dc.getDocument().toObject(studentModel.class));
+                            }
+
+
+                        adapterStudent.notifyDataSetChanged();
+                        if (progressDialog.isShowing())
+                            progressDialog.dismiss();
                     }
-
-                    adapterStudent.notifyDataSetChanged();
-                    if (progressDialog.isShowing())
-                        progressDialog.dismiss();
-                }
-
             }
         });
     }

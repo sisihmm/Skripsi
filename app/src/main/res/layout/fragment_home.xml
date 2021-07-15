@@ -48,7 +48,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvCemail"
+                android:id="@+id/cvstudent"
                 android:layout_width="match_parent"
                 android:layout_height="54dp">
 
@@ -69,7 +69,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvCpassw"
+                android:id="@+id/cvCLesson"
                 android:background="@drawable/round_corner_button"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -91,7 +91,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvLogout"
+                android:id="@+id/cvQuiz"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/round_corner_button"

@@ -1,7 +1,9 @@
 package com.anas.skripsi;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -59,6 +61,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        ViewGroup vgroup  = (ViewGroup) inflater.inflate(R.layout.fragment_home, null);
+
+
+        CardView cvstudent = (CardView) vgroup.findViewById(R.id.cvstudent);
+
+
+        cvstudent.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity().getApplication(),studentList.class);
+            startActivity(i);
+        });
+
+
+        return vgroup;
+//        return inflater.inflate(R.layout.fragment_home, container, false);
+
+
     }
 }

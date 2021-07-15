@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".studentList"></activity>
-        <activity android:name=".studentHome" />
+        <activity android:name=".studentList"
+            android:label="List Student"
+            android:parentActivityName=".Home"
+            android:theme="@style/Theme.Skripsi"
+            />
         <activity
             android:name=".change_password"
             android:label="Change Password"
