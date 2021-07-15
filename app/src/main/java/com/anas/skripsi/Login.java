@@ -74,12 +74,13 @@ public class Login extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), Home.class);
                                     intent.putExtra("level", level);
                                     startActivity(intent);
-                                } else {
-                                    Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), studentHome.class);
-                                    intent.putExtra("level", level);
-                                    startActivity(intent);
                                 }
+//                                else {
+//                                    Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
+//                                    Intent intent = new Intent(getApplicationContext(), studentHome.class);
+//                                    intent.putExtra("level", level);
+//                                    startActivity(intent);
+//                                }
 
                             }
                         });
