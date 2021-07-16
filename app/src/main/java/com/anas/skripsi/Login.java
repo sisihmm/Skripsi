@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anas.skripsi.user.homeStudent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -75,12 +76,12 @@ public class Login extends AppCompatActivity {
                                     intent.putExtra("level", level);
                                     startActivity(intent);
                                 }
-//                                else {
-//                                    Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
-//                                    Intent intent = new Intent(getApplicationContext(), studentHome.class);
-//                                    intent.putExtra("level", level);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), homeStudent.class);
+                                    intent.putExtra("level", level);
+                                    startActivity(intent);
+                                }
 
                             }
                         });

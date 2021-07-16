@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Lesson"
-            android:label="Add Lesson"
-            android:parentActivityName=".Home"
-            android:theme="@style/Theme.Skripsi"/>
+        <activity android:name=".user.homeStudent"></activity>
         <activity
             android:name=".addStudent"
             android:label="Add Student"

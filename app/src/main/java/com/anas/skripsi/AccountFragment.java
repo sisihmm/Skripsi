@@ -105,14 +105,9 @@ public class AccountFragment extends Fragment {
         FirebaseUser userDb = mAuth.getCurrentUser();
         FirebaseFirestore dbActivity = FirebaseFirestore.getInstance();
 
-        dbActivity.collection("users").document(userDb.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                Log.d("USERS", "onComplete: " + task.getResult().getString("email"));
-                hmail.setText(task.getResult().getString("email"));
-
-            }
-
+        dbActivity.collection("users").document(userDb.getUid()).get().addOnCompleteListener(task -> {
+            Log.d("USERS", "onComplete: " + task.getResult().getString("email"));
+            hmail.setText(task.getResult().getString("email"));
 
         });
         return vgroup;
