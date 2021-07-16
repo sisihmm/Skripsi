@@ -62,13 +62,17 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ViewGroup vgroup  = (ViewGroup) inflater.inflate(R.layout.fragment_home, null);
-
-
+        CardView cvlesson = (CardView) vgroup.findViewById(R.id.cvCLesson);
         CardView cvstudent = (CardView) vgroup.findViewById(R.id.cvstudent);
 
 
         cvstudent.setOnClickListener(v -> {
             Intent i = new Intent(getActivity().getApplication(),studentList.class);
+            startActivity(i);
+        });
+
+        cvlesson.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity().getApplication(),Lesson.class);
             startActivity(i);
         });
 
