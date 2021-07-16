@@ -24,7 +24,7 @@
                 android:layout_width="164dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="left"
-                android:src="@drawable/bgperson_foreground" />
+                android:src="@drawable/bg_person" />
 
             <TextView
                 android:layout_width="wrap_content"

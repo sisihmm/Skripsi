@@ -24,10 +24,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        app:fab_addButtonColorNormal="@color/white"
+        app:fab_addButtonColorNormal="@color/deepPurple"
         app:fab_addButtonColorPressed="@color/white_pressed"
-        app:fab_addButtonPlusIconColor="@color/half_black"
-        app:fab_labelStyle="@style/Theme.AppCompat"
+        app:fab_addButtonPlusIconColor="@color/black"
+        app:fab_labelStyle="@style/menu_labels_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.871"
@@ -36,20 +36,20 @@
         app:layout_constraintVertical_bias="0.929">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/action_a"
+            android:id="@+id/tambah_murid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
+            app:fab_colorNormal="@color/deepPurple"
             app:fab_colorPressed="@color/white_pressed"
-            app:fab_title="Action A" />
+            app:fab_title="Tambah Murid" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/action_b"
+            android:id="@+id/edit_murid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
+            app:fab_colorNormal="@color/deepPurple"
             app:fab_colorPressed="@color/white_pressed"
-            app:fab_title="Action with a very long name that won\'t fit on the screen" />
+            app:fab_title="Edit Murid" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

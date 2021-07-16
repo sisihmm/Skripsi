@@ -76,7 +76,7 @@ public class change_email extends AppCompatActivity {
 
             });
 
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         });
     }
 }

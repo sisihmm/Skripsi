@@ -88,13 +88,13 @@ public class AccountFragment extends Fragment {
             startActivity(i);
         });
 
-                                cvLogout.setOnClickListener(v -> {
-                                    FirebaseAuth.getInstance().signOut();
-                                    Intent i = new Intent(getActivity().getApplication(),Login.class);
-                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    startActivity(i);
-                                });
+        cvLogout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent i = new Intent(getActivity().getApplication(),Login.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        });
 
         cvPass.setOnClickListener(v -> {
             Intent i = new Intent(getActivity().getApplication(),change_password.class);

@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+
 public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentViewHolder> {
+
 
     Context context;
 
@@ -31,6 +33,7 @@ public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentV
 
         return new StudentViewHolder(v);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull AdapterStudent.StudentViewHolder holder, int position) {
@@ -56,4 +59,5 @@ public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentV
             stEmail = itemView.findViewById(R.id.stemail);
         }
     }
+
 }

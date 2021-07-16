@@ -79,7 +79,7 @@ public class Register extends AppCompatActivity {
                     user.put("level", "1");
 
                     db.collection("users").document(task.getResult().getUser().getUid()).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
+                            @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(Register.this,"User Createed",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),Login.class));

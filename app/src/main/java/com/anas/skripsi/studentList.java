@@ -1,14 +1,23 @@
 package com.anas.skripsi;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Toast;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -27,6 +36,8 @@ public class studentList extends AppCompatActivity {
     AdapterStudent adapterStudent;
     FirebaseFirestore db;
     ProgressDialog progressDialog;
+    FloatingActionButton tambahMurid,editMurid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +59,17 @@ public class studentList extends AppCompatActivity {
 
         recyclerView.setAdapter(adapterStudent);
 
+        tambahMurid = findViewById(R.id.tambah_murid);
+
         EventChangeListener();
                 
-                
-    }
+        tambahMurid.setOnClickListener(view -> {
+                Intent intent = new Intent(studentList.this, addStudent.class);
+                startActivity(intent);
+            });
 
+
+}
     private void EventChangeListener() {
         db.collection("users").whereGreaterThan("level","1").orderBy("level", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -78,7 +95,23 @@ public class studentList extends AppCompatActivity {
                         if (progressDialog.isShowing())
                             progressDialog.dismiss();
                     }
+
+                    new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
+                        @Override
+                        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                            return false;
+                        }
+
+                        @Override
+                        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                            
+                            Toast.makeText(studentList.this, "Item removed", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }).attachToRecyclerView(recyclerView);
             }
         });
+
+
     }
 }
