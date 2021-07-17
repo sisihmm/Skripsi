@@ -169,7 +169,7 @@
                     android:layout_width="75dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_profile" />
+                    android:background="@mipmap/family_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -207,7 +207,7 @@
                     android:layout_width="75dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_profile" />
+                    android:background="@mipmap/worksheet_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -245,7 +245,7 @@
                     android:layout_width="75dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_course_plan" />
+                    android:background="@mipmap/animal_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -283,7 +283,7 @@
                     android:layout_width="75dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_course_plan" />
+                    android:background="@mipmap/vehicle_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -321,7 +321,7 @@
                     android:layout_width="75dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_course_plan" />
+                    android:background="@mipmap/kitchen_foreground" />
 
                 <TextView
                     android:id="@+id/Kitchen"
@@ -360,7 +360,7 @@
                     android:layout_width="75dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_course_plan" />
+                    android:background="@mipmap/verbs_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
