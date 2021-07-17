@@ -77,7 +77,8 @@ public class Login extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                                 else {
-                                    Toast.makeText(Login.this, "student Login", Toast.LENGTH_SHORT).show();
+                                    Log.d("LOGIN", "onComplete: " + task.getResult().getString("level"));
+                                    Toast.makeText(Login.this, "user Login", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), homeStudent.class);
                                     intent.putExtra("level", level);
                                     startActivity(intent);

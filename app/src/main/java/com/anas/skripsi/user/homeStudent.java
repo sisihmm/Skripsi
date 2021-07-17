@@ -2,7 +2,9 @@ package com.anas.skripsi.user;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ public class homeStudent extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     TextView myName;
+    CardView golesson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +30,20 @@ public class homeStudent extends AppCompatActivity {
 
         myName = findViewById(R.id.myname);
         mAuth = FirebaseAuth.getInstance();
+
+        golesson = findViewById(R.id.golesson);
         FirebaseUser userDb = mAuth.getCurrentUser();
         FirebaseFirestore dbActivity = FirebaseFirestore.getInstance();
 
         dbActivity.collection("users").document(userDb.getUid()).get().addOnCompleteListener(task -> {
-            Log.d("USERS", "onComplete: " + task.getResult().getString("email"));
-            myName.setText(task.getResult().getString("email"));
+//            Log.d("USERS", "onComplete: " + task.getResult().getString("email"));
+            myName.setText(task.getResult().getString("name"));
 
+        });
+
+        golesson.setOnClickListener(view -> {
+            Intent intent = new Intent(homeStudent.this, lessonStudent.class);
+            startActivity(intent);
         });
 
     }

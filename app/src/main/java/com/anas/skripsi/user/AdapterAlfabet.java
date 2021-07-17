@@ -21,14 +21,17 @@ import java.util.ArrayList;
 public class AdapterAlfabet extends RecyclerView.Adapter<AdapterAlfabet.AlfabetViewHolder>{
 
     Context context;
-    Activity activity;
-    int lastPosition = -1;
-    ArrayList<alfabetModel>alfabetArrayList;
+    ArrayList<alfabetModel>alfaArrayList;
 
-    public AdapterAlfabet(Context context,ArrayList<alfabetModel>alfabetArrayList) {
+//   animasi
+        Activity activity;
+        int lastPosition = -1;
+
+
+    public AdapterAlfabet(Context context,ArrayList<alfabetModel>alfaArrayList) {
         this.context = context;
         this.activity = activity;
-        this.alfabetArrayList = alfabetArrayList;
+        this.alfaArrayList = alfaArrayList;
     }
 
 
@@ -42,13 +45,13 @@ public class AdapterAlfabet extends RecyclerView.Adapter<AdapterAlfabet.AlfabetV
 
     @Override
     public void onBindViewHolder(@NonNull AdapterAlfabet.AlfabetViewHolder holder, int position) {
-            alfabetModel alfabetModel = alfabetArrayList.get(position);
+            alfabetModel alfabetModel = alfaArrayList.get(position);
+
             holder.cvAlfa.setText(alfabetModel.alfa);
 
             setAnimation(holder.itemView,position);
-
             holder.itemView.setOnClickListener(view ->
-                    Toast.makeText(activity, (CharSequence) alfabetArrayList.get(position),
+                    Toast.makeText(activity, (CharSequence) alfaArrayList.get(position),
                             Toast.LENGTH_SHORT).show());
     }
 
@@ -63,7 +66,7 @@ public class AdapterAlfabet extends RecyclerView.Adapter<AdapterAlfabet.AlfabetV
     }
 
     @Override
-    public int getItemCount() { return alfabetArrayList.size(); }
+    public int getItemCount() { return alfaArrayList.size(); }
 
 
     public static class AlfabetViewHolder extends RecyclerView.ViewHolder {

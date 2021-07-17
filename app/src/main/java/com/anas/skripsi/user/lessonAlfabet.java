@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class lessonAlfabet extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<alfabetModel> alfabetArrayList;
+    ArrayList<alfabetModel> alfaArrayList;
     AdapterAlfabet adapterAlfabet;
     FirebaseFirestore db;
     ProgressDialog progressDialog;
@@ -48,8 +48,8 @@ public class lessonAlfabet extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         db = FirebaseFirestore.getInstance();
-        alfabetArrayList = new ArrayList<alfabetModel>();
-        adapterAlfabet = new AdapterAlfabet(lessonAlfabet.this,alfabetArrayList);
+        alfaArrayList = new ArrayList<alfabetModel>();
+        adapterAlfabet = new AdapterAlfabet(lessonAlfabet.this,alfaArrayList);
 
         recyclerView.setAdapter(adapterAlfabet);
 
@@ -74,7 +74,7 @@ public class lessonAlfabet extends AppCompatActivity {
                     }
                     for (DocumentChange dc : value.getDocumentChanges()) {
                         if (dc.getType() == DocumentChange.Type.ADDED) {
-                            alfabetArrayList.add(dc.getDocument().toObject(alfabetModel.class));
+                            alfaArrayList.add(dc.getDocument().toObject(alfabetModel.class));
                         }
 
 

@@ -16,7 +16,6 @@ public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentV
 
 
     Context context;
-
     ArrayList<studentModel> studentArrayList;
 
     public AdapterStudent(Context context, ArrayList<studentModel> studentArrayList) {
@@ -29,8 +28,6 @@ public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentV
     public AdapterStudent.StudentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(context).inflate(R.layout.list_student,parent,false);
-
-
         return new StudentViewHolder(v);
     }
 
