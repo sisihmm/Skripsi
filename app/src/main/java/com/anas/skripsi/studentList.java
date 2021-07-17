@@ -72,45 +72,42 @@ public class studentList extends AppCompatActivity {
 }
     private void EventChangeListener() {
         db.collection("users").whereGreaterThan("level","1").orderBy("level", Query.Direction.ASCENDING)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                .addSnapshotListener((value, error) -> {
 
-                if (error != null) {
+                    if (error != null) {
 
-                    if (progressDialog.isShowing())
-                        progressDialog.dismiss();
-                    Log.e("error", error.getMessage());
-                    return;
-
-                }
-
-                    for (DocumentChange dc : value.getDocumentChanges()) {
-                       if (dc.getType() == DocumentChange.Type.ADDED) {
-                           studentArrayList.add(dc.getDocument().toObject(studentModel.class));
-                            }
-
-
-                        adapterStudent.notifyDataSetChanged();
                         if (progressDialog.isShowing())
                             progressDialog.dismiss();
+                        Log.e("error", error.getMessage());
+                        return;
+
                     }
 
-                    new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
-                        @Override
-                        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                            return false;
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                           if (dc.getType() == DocumentChange.Type.ADDED) {
+                               studentArrayList.add(dc.getDocument().toObject(studentModel.class));
+                                }
+
+
+                            adapterStudent.notifyDataSetChanged();
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
                         }
 
-                        @Override
-                        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                            
-                            Toast.makeText(studentList.this, "Item removed", Toast.LENGTH_SHORT).show();
+                        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
+                            @Override
+                            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                                return false;
+                            }
 
-                        }
-                    }).attachToRecyclerView(recyclerView);
-            }
-        });
+                            @Override
+                            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                                Toast.makeText(studentList.this, "Item removed", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }).attachToRecyclerView(recyclerView);
+                });
 
 
     }
