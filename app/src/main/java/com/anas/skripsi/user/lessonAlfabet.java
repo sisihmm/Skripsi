@@ -1,34 +1,28 @@
 package com.anas.skripsi.user;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.anas.skripsi.AdapterStudent;
 import com.anas.skripsi.R;
-import com.anas.skripsi.studentList;
 import com.anas.skripsi.studentModel;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.EventListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class lessonAlfabet extends AppCompatActivity {
+
+public class LessonAlfabet extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<alfabetModel> alfaArrayList;
-    AdapterAlfabet adapterAlfabet;
-    FirebaseFirestore db;
-    ProgressDialog progressDialog;
+    ArrayList<Alfa> alfaArrayList;
+    AlfaAdapter alfaAdapter;
+
 
 
     @Override
@@ -37,54 +31,20 @@ public class lessonAlfabet extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_alfabet);
 
         recyclerView = findViewById(R.id.recalfa);
-
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage("tunggu");
-        progressDialog.show();
-
-        recyclerView = findViewById(R.id.recalfa);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        db = FirebaseFirestore.getInstance();
-        alfaArrayList = new ArrayList<alfabetModel>();
-        adapterAlfabet = new AdapterAlfabet(lessonAlfabet.this,alfaArrayList);
+        alfaArrayList = new ArrayList<>();
+        Alfa myalfa = new Alfa("tes","tes1","tes2");
+        alfaArrayList.add(myalfa);
+        alfaAdapter = new AlfaAdapter(alfaArrayList);
+        recyclerView.setAdapter(alfaAdapter);
 
-        recyclerView.setAdapter(adapterAlfabet);
 
 
-        EventChangeListenertw();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
     }
-
-    private void EventChangeListenertw(){
-        db.collection("lesson").orderBy("alfa", Query.Direction.ASCENDING)
-                .addSnapshotListener((value, error) -> {
-
-                    if (error != null) {
-
-                        if (progressDialog.isShowing())
-                            progressDialog.dismiss();
-                        Log.e("error", error.getMessage());
-                        return;
-
-                    }
-                    for (DocumentChange dc : value.getDocumentChanges()) {
-                        if (dc.getType() == DocumentChange.Type.ADDED) {
-                            alfaArrayList.add(dc.getDocument().toObject(alfabetModel.class));
-                        }
-
-
-                        adapterAlfabet.notifyDataSetChanged();
-                        if (progressDialog.isShowing())
-                            progressDialog.dismiss();
-                    }
-
-                });
-    }
-
 
 }

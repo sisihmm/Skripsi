@@ -5,14 +5,12 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.anas.skripsi.Login;
 import com.anas.skripsi.R;
-import com.anas.skripsi.forget;
-import com.anas.skripsi.studentList;
 
-public class lessonStudent extends AppCompatActivity {
+import java.util.Objects;
+
+public class LessonStudent extends AppCompatActivity {
 
     CardView alfabet;
 
@@ -24,11 +22,11 @@ public class lessonStudent extends AppCompatActivity {
         alfabet = findViewById(R.id.alfabet);
 
         alfabet.setOnClickListener(view -> {
-            Intent intent = new Intent(lessonStudent.this, lessonAlfabet.class);
+            Intent intent = new Intent(LessonStudent.this, LessonAlfabet.class);
             startActivity(intent);
         });
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
 }

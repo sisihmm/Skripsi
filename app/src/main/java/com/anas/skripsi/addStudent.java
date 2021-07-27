@@ -52,7 +52,8 @@ public class addStudent extends AppCompatActivity {
                 emailStud.setError(" email kosong");
                 return;
             }
-            fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+
+            fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
                     Map<String, Object> user = new HashMap<>();
                     user.put("name", name);

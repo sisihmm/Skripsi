@@ -11,16 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".user.lessonAlfabet"
+        <activity android:name=".user.LessonAlfabet"
             android:label="Alfabet"
-            android:parentActivityName=".user.lessonStudent"
+            android:parentActivityName=".user.LessonStudent"
             android:theme="@style/Theme.Skripsi" />
         <activity
-            android:name=".user.lessonStudent"
+            android:name=".user.LessonStudent"
             android:label="Lesson"
-            android:parentActivityName=".user.homeStudent"
+            android:parentActivityName=".user.HomeStudent"
             android:theme="@style/Theme.Skripsi" />
-        <activity android:name=".user.homeStudent" />
+        <activity android:name=".user.HomeStudent" />
         <activity
             android:name=".addStudent"
             android:label="Add Student"

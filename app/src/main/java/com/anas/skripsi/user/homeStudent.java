@@ -1,23 +1,18 @@
 package com.anas.skripsi.user;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.anas.skripsi.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class homeStudent extends AppCompatActivity {
+public class HomeStudent extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     TextView myName;
@@ -42,7 +37,7 @@ public class homeStudent extends AppCompatActivity {
         });
 
         golesson.setOnClickListener(view -> {
-            Intent intent = new Intent(homeStudent.this, lessonStudent.class);
+            Intent intent = new Intent(HomeStudent.this, LessonStudent.class);
             startActivity(intent);
         });
 
