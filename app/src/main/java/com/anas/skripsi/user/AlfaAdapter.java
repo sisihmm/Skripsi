@@ -17,7 +17,12 @@ public class AlfaAdapter extends RecyclerView.Adapter<AlfaAdapter.alfaViewHolder
     Context context;
     ArrayList<Alfa> alfaArrayList;
 
-    public AlfaAdapter(ArrayList<Alfa> alfaArrayList){
+//    public AlfaAdapter(ArrayList<Alfa> alfaArrayList, Context context){
+//        this.context = context;
+//        this.alfaArrayList = alfaArrayList;
+//    }
+
+    public AlfaAdapter(Context context,ArrayList<Alfa> alfaArrayList) {
         this.context = context;
         this.alfaArrayList = alfaArrayList;
     }
