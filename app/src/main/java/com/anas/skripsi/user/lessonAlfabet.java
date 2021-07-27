@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import com.anas.skripsi.AdapterStudent;
@@ -23,8 +24,6 @@ public class LessonAlfabet extends AppCompatActivity {
     ArrayList<Alfa> alfaArrayList;
     AlfaAdapter alfaAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +38,6 @@ public class LessonAlfabet extends AppCompatActivity {
         alfaArrayList.add(myalfa);
         alfaAdapter = new AlfaAdapter(alfaArrayList);
         recyclerView.setAdapter(alfaAdapter);
-
-
 
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
