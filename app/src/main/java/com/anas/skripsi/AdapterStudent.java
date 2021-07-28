@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentViewHolder> {
 
-
     Context context;
     ArrayList<studentModel> studentArrayList;
 
@@ -29,7 +28,8 @@ public class AdapterStudent extends RecyclerView.Adapter<AdapterStudent.StudentV
 
         View v = LayoutInflater.from(context).inflate(R.layout.list_student,parent,false);
         return new StudentViewHolder(v);
-    }
+
+        }
 
 
     @Override

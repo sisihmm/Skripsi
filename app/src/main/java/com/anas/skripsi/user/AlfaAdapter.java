@@ -1,4 +1,5 @@
 package com.anas.skripsi.user;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +13,13 @@ import com.anas.skripsi.R;
 
 import java.util.ArrayList;
 
+
 public class AlfaAdapter extends RecyclerView.Adapter<AlfaAdapter.alfaViewHolder>{
 
     Context context;
-    ArrayList<Alfa> alfaArrayList;
+    ArrayList<String> alfaArrayList;
 
-//    public AlfaAdapter(ArrayList<Alfa> alfaArrayList, Context context){
-//        this.context = context;
-//        this.alfaArrayList = alfaArrayList;
-//    }
-
-    public AlfaAdapter(Context context,ArrayList<Alfa> alfaArrayList) {
+    public AlfaAdapter(Context context, ArrayList<String> alfaArrayList){
         this.context = context;
         this.alfaArrayList = alfaArrayList;
     }
@@ -30,16 +27,15 @@ public class AlfaAdapter extends RecyclerView.Adapter<AlfaAdapter.alfaViewHolder
     @NonNull
     @Override
     public AlfaAdapter.alfaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.alfabetcv,parent, false);
-        return new alfaViewHolder(view);
+        View v = LayoutInflater.from(context).inflate(R.layout.alfabetcv, parent,false);
+        return new alfaViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AlfaAdapter.alfaViewHolder holder, int position) {
-        Alfa alfa = alfaArrayList.get(position);
+    public void onBindViewHolder(@NonNull alfaViewHolder holder, int position) {
+        String alfamodel = alfaArrayList.get(position);
 
-        holder.alfaB.setText(alfa.getAlfa());
-
+        holder.alfaN.setText(alfamodel);
     }
 
     @Override
@@ -49,11 +45,11 @@ public class AlfaAdapter extends RecyclerView.Adapter<AlfaAdapter.alfaViewHolder
 
     public static class alfaViewHolder extends RecyclerView.ViewHolder {
 
-        TextView alfaB;
+        TextView alfaN;
 
         public alfaViewHolder(@NonNull View itemView) {
             super(itemView);
-            alfaB = itemView.findViewById(R.id.alfa1);
+            alfaN = itemView.findViewById(R.id.alfa1);
         }
     }
 }
