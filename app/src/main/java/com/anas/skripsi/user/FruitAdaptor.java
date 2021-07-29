@@ -39,9 +39,9 @@ public class FruitAdaptor extends RecyclerView.Adapter<FruitAdaptor.FruitViewHol
         String f = fruitArrayList.get(position);
 
         holder.tv_fruit.setText(f);
-
-        Picasso.get().load(position).resize(120,60).into(holder.img_fruit);
+        Picasso.get().load(f).resize(120,60).into(holder.img_fruit);
     }
+
 
     @Override
     public int getItemCount() {

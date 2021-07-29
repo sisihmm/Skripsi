@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class LessonStudent extends AppCompatActivity {
 
-    CardView alfabet;
+    CardView alfabet,fruit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,15 @@ public class LessonStudent extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_student);
 
         alfabet = findViewById(R.id.alfabet);
+        fruit = findViewById(R.id.fruit1);
 
         alfabet.setOnClickListener(view -> {
             Intent intent = new Intent(LessonStudent.this, LessonAlfabet.class);
+            startActivity(intent);
+        });
+
+        fruit.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonStudent.this, Fruit.class);
             startActivity(intent);
         });
 
