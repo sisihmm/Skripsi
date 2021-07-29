@@ -17,11 +17,11 @@ import java.util.ArrayList;
 
 public class FruitAdaptor extends RecyclerView.Adapter<FruitAdaptor.FruitViewHolder> {
     Context context;
-    ArrayList<String> fruitArrayList;
+    ArrayList<FruitModel> fruitModel;
 
-    public FruitAdaptor(Context context, ArrayList<String>fruitArrayList){
+    public FruitAdaptor(Context context, ArrayList<FruitModel>fruitModel){
         this.context = context;
-        this.fruitArrayList = fruitArrayList;
+        this.fruitModel = fruitModel;
     }
 
 
@@ -36,16 +36,17 @@ public class FruitAdaptor extends RecyclerView.Adapter<FruitAdaptor.FruitViewHol
     @Override
     public void onBindViewHolder(@NonNull FruitViewHolder holder, int position) {
 
-        String f = fruitArrayList.get(position);
-
-        holder.tv_fruit.setText(f);
-        Picasso.get().load(f).resize(120,60).into(holder.img_fruit);
+//        String f = fruitModel.get(position);
+//        holder.tv_fruit.setText(f);
+//        Picasso.get().load(f).resize(120,60).into(holder.img_fruit);
+        holder.tv_fruit.setText(position);
+        Picasso.get().load(position).resize(120,60).into(holder.img_fruit);
     }
 
 
     @Override
     public int getItemCount() {
-        return fruitArrayList.size();
+        return fruitModel.size();
     }
 
     public static class FruitViewHolder extends RecyclerView.ViewHolder {
@@ -56,8 +57,8 @@ public class FruitAdaptor extends RecyclerView.Adapter<FruitAdaptor.FruitViewHol
         public FruitViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_fruit = (TextView)itemView.findViewById(R.id.tv_fruit);
-            img_fruit = (ImageView)itemView.findViewById(R.id.img_fruit);
+            tv_fruit = itemView.findViewById(R.id.tv_fruit);
+            img_fruit = itemView.findViewById(R.id.img_fruit);
         }
     }
 }
