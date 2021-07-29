@@ -41,7 +41,7 @@
             android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recalfa"
+                android:id="@+id/realfa"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/support_simple_spinner_dropdown_item" />

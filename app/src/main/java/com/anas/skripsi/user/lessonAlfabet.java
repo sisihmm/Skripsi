@@ -5,19 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anas.skripsi.R;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -40,7 +34,7 @@ public class LessonAlfabet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_alfabet);
 
-        recyclerView = findViewById(R.id.recalfa);
+        recyclerView = findViewById(R.id.realfa);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -103,7 +97,7 @@ public class LessonAlfabet extends AppCompatActivity {
 
         stop.setOnClickListener(view -> {
             alfamusic.stop();
-//            alfamusic = MediaPlayer.create(this, R.raw.alfa);
+            alfamusic = MediaPlayer.create(this, R.raw.alfa);
         });
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
