@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anas.skripsi.R;
+import com.google.android.gms.tasks.Task;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -36,13 +37,16 @@ public class FruitAdaptor extends RecyclerView.Adapter<FruitAdaptor.FruitViewHol
     @Override
     public void onBindViewHolder(@NonNull FruitViewHolder holder, int position) {
 
-        FruitModel tes = fruitModel.get(position);
+//        FruitModel tes = fruitModel.get(position);
 //        String f = fruitModel.get(position);
-//        holder.tv_fruit.setText(f);
-//        Picasso.get().load(f).resize(120,60).into(holder.img_fruit);
-        holder.tv_fruit.setText((CharSequence) tes);
-        Picasso.get().load(String.valueOf(tes)).resize(120,60).into(holder.img_fruit);
-    }
+        FruitModel f = fruitModel.get(position);
+
+        holder.tv_fruit.setText(f.fruit_name);
+        Picasso.get().load(f.fruit_image_urls).resize(120,60).into(holder.img_fruit);
+//        holder.tv_fruit.setText((CharSequence) tes);
+//        Picasso.get().load(String.valueOf(tes)).resize(120,60).into(holder.img_fruit);
+//
+  }
 
 
     @Override

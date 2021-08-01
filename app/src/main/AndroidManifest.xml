@@ -11,11 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".user.Fruit"
+        <activity android:name=".user.Pob"
+            android:label="Part Of Body"
+            android:parentActivityName=".user.LessonStudent"
+            android:theme="@style/Theme.Skripsi"/>
+        <activity
+            android:name=".user.Fruit"
             android:label="Fruit"
             android:parentActivityName=".user.LessonStudent"
-            android:theme="@style/Theme.Skripsi"
-            />
+            android:theme="@style/Theme.Skripsi" />
         <activity
             android:name=".user.LessonAlfabet"
             android:label="Alfabet"
