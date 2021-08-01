@@ -31,6 +31,7 @@ public class Pob extends AppCompatActivity {
         recyclerView = findViewById(R.id.repob);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+
         pobArrayList = new ArrayList<>();
         pobArrayList.add("head = kepala");
         pobArrayList.add("hair = rambut");
@@ -72,6 +73,7 @@ public class Pob extends AppCompatActivity {
         pobArrayList.add("thigh = paha");
         pobArrayList.add("calf = betis");
         pobArrayList.add("bottom = pantat");
+
         pobAdapter = new PobAdapter(this, pobArrayList);
         recyclerView.setAdapter(pobAdapter);
 
