@@ -21,7 +21,7 @@ public class Pob extends AppCompatActivity {
     private ImageView imageView;
     RecyclerView recyclerView;
     ArrayList<String> pobArrayList;
-    pobAdapter pobAdapter;
+    PobAdapter pobAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +31,49 @@ public class Pob extends AppCompatActivity {
         recyclerView = findViewById(R.id.repob);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-
-        pobAdapter = new pobAdapter(Pob.this,pobArrayList);
-        recyclerView.setAdapter(pobAdapter);
-
         pobArrayList = new ArrayList<>();
-        pobArrayList.add("head ");
-        pobArrayList.add("hair ");
-
+        pobArrayList.add("head = kepala");
+        pobArrayList.add("hair = rambut");
+        pobArrayList.add("face = wajah");
+        pobArrayList.add("forehead = kening");
+        pobArrayList.add("eye = mata");
+        pobArrayList.add("eyebrow = alis");
+        pobArrayList.add("eyelashes = bulu mata");
+        pobArrayList.add("ear = telinga");
+        pobArrayList.add("nose = hidung");
+        pobArrayList.add("chin = dagu");
+        pobArrayList.add("cheek = pipi");
+        pobArrayList.add("neck = leher");
+        pobArrayList.add("lips = bibir");
+        pobArrayList.add("tooth = gigi");
+        pobArrayList.add("tongue = lidah");
+        pobArrayList.add("mouth = mulut");
+        pobArrayList.add("elbow = sikut");
+        pobArrayList.add("arm = pergelangan tangan");
+        pobArrayList.add("hand = tangan");
+        pobArrayList.add("finger = jari");
+        pobArrayList.add("thumb = jempol");
+        pobArrayList.add("index finger = jari telunjuk");
+        pobArrayList.add("middle finger = jari tengah");
+        pobArrayList.add("ring finger = jari manis");
+        pobArrayList.add("little finger = jari kelingking");
+        pobArrayList.add("shoulder = bahu");
+        pobArrayList.add("chest = dada");
+        pobArrayList.add("stomach = perut");
+        pobArrayList.add("waist = pinggang");
+        pobArrayList.add("skin = kulit");
+        pobArrayList.add("knee = lutut");
+        pobArrayList.add("leg  = pergelangan kaki");
+        pobArrayList.add("foot = kaki");
+        pobArrayList.add("ankle = mata kaki");
+        pobArrayList.add("heel = tumit");
+        pobArrayList.add("toes = jari kaki");
+        pobArrayList.add("back = punggung");
+        pobArrayList.add("thigh = paha");
+        pobArrayList.add("calf = betis");
+        pobArrayList.add("bottom = pantat");
+        pobAdapter = new PobAdapter(this, pobArrayList);
+        recyclerView.setAdapter(pobAdapter);
 
 
         imageView = findViewById(R.id.ivpob);

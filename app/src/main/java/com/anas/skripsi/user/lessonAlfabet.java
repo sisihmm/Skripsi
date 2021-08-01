@@ -34,10 +34,6 @@ public class LessonAlfabet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_alfabet);
 
-        recyclerView = findViewById(R.id.realfa);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-
         mTextView = findViewById(R.id.textView2);
         mTextView.setText("Hello everyone, how are you today? \n " +
                 "Pada kesempatan kali ini kami akan menerangkan bagaimana cara membaca alphabet\n" +
@@ -49,6 +45,10 @@ public class LessonAlfabet extends AppCompatActivity {
                 "\n" +
                 "Cara Membaca Alphabet dalam Bahasa Inggris");
 
+
+        recyclerView = findViewById(R.id.realfa);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
         alfaArrayList = new ArrayList<>();
         alfaArrayList.add("Aa = [ei] = Apple = Apel");
@@ -81,7 +81,7 @@ public class LessonAlfabet extends AppCompatActivity {
 
 
 
-        alfaAdapter = new AlfaAdapter(LessonAlfabet.this, alfaArrayList);
+        alfaAdapter = new AlfaAdapter(this, alfaArrayList);
 
         recyclerView.setAdapter(alfaAdapter);
 

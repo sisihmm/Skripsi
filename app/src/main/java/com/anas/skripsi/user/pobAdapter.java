@@ -13,34 +13,36 @@ import com.anas.skripsi.R;
 
 import java.util.ArrayList;
 
-public class pobAdapter extends RecyclerView.Adapter<pobAdapter.pobViewHolder> {
+public class PobAdapter extends RecyclerView.Adapter<PobAdapter.pobViewHolder> {
 
     Context context;
     ArrayList<String> pobArrayList;
 
-    public pobAdapter(Context context, ArrayList<String> pobArrayList){
+    public PobAdapter(Context context, ArrayList<String> pobArrayList){
         this.context = context;
         this.pobArrayList = pobArrayList;
     }
 
     @NonNull
     @Override
-    public pobAdapter.pobViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.pobcv, parent,  false);
+    public PobAdapter.pobViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.pobcv, parent,false);
         return new pobViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull pobAdapter.pobViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PobAdapter.pobViewHolder holder, int position) {
 
         String f = pobArrayList.get(position);
+
         holder.top.setText(f);
 
     }
 
     @Override
     public int getItemCount() {
-        return pobArrayList.size(); }
+        return pobArrayList.size();
+    }
 
     public static class pobViewHolder extends RecyclerView.ViewHolder {
         TextView top;

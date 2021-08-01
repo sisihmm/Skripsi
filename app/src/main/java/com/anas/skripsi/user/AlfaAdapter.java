@@ -33,9 +33,8 @@ public class AlfaAdapter extends RecyclerView.Adapter<AlfaAdapter.alfaViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull alfaViewHolder holder, int position) {
-        String alfamodel = alfaArrayList.get(position);
-
-        holder.alfaN.setText(alfamodel);
+        String am = alfaArrayList.get(position);
+        holder.alfaN.setText(am);
     }
 
     @Override
