@@ -35,14 +35,13 @@ public class LessonAlfabet extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_alfabet);
 
         mTextView = findViewById(R.id.textView2);
-        mTextView.setText("Hello everyone, how are you today? \n " +
-                "Pada kesempatan kali ini kami akan menerangkan bagaimana cara membaca alphabet\n" +
-                " dalam bahasa inggris. Materi alphabet ini tentu sudah diajarkan di bangku sekolah dasar\n" +
-                " bahkan saat kita di taman kanak-kanak. Namun banyak dari kita yang bahkan orang dewasa \n" +
-                " lupa bagaimana cara membaca alphabet dalam bahasa inggris karena jarang dipakai dalam \n" +
-                "kehidupan sehari-hari. Jadi mari kita kembali mempelajari materi yang paling dasaaaaar ini,\n" +
-                " hehe okee langsung saja~\n" +
-                "\n" +
+        mTextView.setText("Hello everyone, how are you today?\n"+
+                "Pada kesempatan kali ini kami akan menerangkan"+
+                "bagaimana cara membaca alphabet dalam bahasa inggris.\n"+
+                "Materi alphabet ini tentu sudah diajarkan"+
+                "di bangku sekolah dasar bahkan saat kita di taman\n"+
+                "kanak-kanak.\n"+
+                "\n"+
                 "Cara Membaca Alphabet dalam Bahasa Inggris");
 
 

@@ -8,9 +8,9 @@
 
     <View
         android:id="@+id/bg_top_header2"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:background="@drawable/ic_bg_topheader"
+        android:layout_width="128dp"
+        android:layout_height="151dp"
+        android:background="@mipmap/alfabgr_foreground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,12 +25,15 @@
             android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="135dp"
+                    android:maxLines="10"
+                    android:scrollbars="vertical"
                     android:text="Large Text"
-                    android:id="@+id/textView2"
-                    android:maxLines = "10"
-                    android:scrollbars = "vertical"/>
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -49,14 +52,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="152dp"
-            android:layout_height="46dp"
+            android:layout_width="197dp"
+            android:layout_height="76dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/aa"
-                android:layout_width="137dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="20dp"
                 android:text="Alphabet ini juga ada lagunya, disini." />
 
 
@@ -65,22 +69,23 @@
         <LinearLayout
             android:layout_width="307dp"
             android:layout_height="71dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
 
             <ImageView
                 android:id="@+id/btnPlay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/playalpa"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:layout_width="77dp"
+                android:layout_height="59dp"
+                android:layout_marginLeft="50dp"
+                android:background="@mipmap/playkuy_foreground" />
 
             <ImageView
                 android:id="@+id/btnStop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/stop"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:layout_width="77dp"
+                android:layout_height="59dp"
+                android:layout_marginLeft="50dp"
+                android:background="@mipmap/stopkuy_foreground" />
         </LinearLayout>
 
     </LinearLayout>
