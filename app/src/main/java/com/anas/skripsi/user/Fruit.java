@@ -43,8 +43,8 @@ public class Fruit extends AppCompatActivity {
     };
 
     RecyclerView recyclerView;
-//    FruitAdaptor fruitAdaptor;
-//    ArrayList<String>fruitArrayList;
+    FruitAdaptor fruitAdaptor;
+    ArrayList<String>fruitArrayList;
 
 
     @Override
@@ -55,9 +55,8 @@ public class Fruit extends AppCompatActivity {
         recyclerView = findViewById(R.id.refruit);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-//
-//        fruitAdaptor = new FruitAdaptor(Fruit.this,fruitArrayList);
-//        recyclerView.setAdapter(fruitAdaptor);
+
+
 
         ArrayList fmodel = fruitku();
         FruitAdaptor adaptor = new FruitAdaptor(getApplicationContext(),fmodel);

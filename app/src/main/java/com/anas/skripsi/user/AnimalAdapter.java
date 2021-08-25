@@ -41,8 +41,6 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.animalView
         holder.tv_animal.setText(f.img_name);
         Picasso.get().load(f.img_animal).resize(120,60).into(holder.imgee_animal);
 
-
-
     }
 
     @Override

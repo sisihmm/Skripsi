@@ -52,13 +52,15 @@ public class animal extends AppCompatActivity {
     }
 
     private ArrayList animalku() {
-        ArrayList myfruit = new ArrayList<>();
-        for (int i=0;i<animal_name.length;i++){
+        ArrayList myanimal = new ArrayList<>();
+        for (int i=0; i<animal_name.length;i++){
             AnimalModel animalModel = new AnimalModel();
-            animalModel.setImg_animal(animal_name[i]);
-            animalModel.setImg_name(animal_image_urls[i]);
-            myfruit.add(animal_name);
+            animalModel.setImg_name(animal_name[i]);
+            animalModel.setImg_animal(animal_image_urls[i]);
+            myanimal.add(animalModel);
         }
-        return myfruit;
+        return myanimal;
     }
+
+
 }

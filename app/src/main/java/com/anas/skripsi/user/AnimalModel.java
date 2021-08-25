@@ -4,8 +4,10 @@ public class AnimalModel {
     String img_animal;
     String img_name;
 
-
-    public AnimalModel() {}
+    public AnimalModel() {
+        this.img_animal = img_animal;
+        this.img_name = img_name;
+    }
 
     public String getImg_animal() {
         return img_animal;
