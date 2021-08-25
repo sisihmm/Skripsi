@@ -44,7 +44,8 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.FamilyView
     }
 
     @Override
-    public int getItemCount() { return familyModel.size(); }
+    public int getItemCount() {
+        return familyModel.size(); }
 
     public class FamilyViewHolder extends RecyclerView.ViewHolder {
         ImageView img_familiku;

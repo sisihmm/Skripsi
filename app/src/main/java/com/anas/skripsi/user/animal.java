@@ -49,7 +49,7 @@ public class animal extends AppCompatActivity {
         recyclerView.setAdapter(adaptor);
 
         //back
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+                    Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
     }
 
