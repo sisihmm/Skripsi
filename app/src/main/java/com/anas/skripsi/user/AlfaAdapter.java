@@ -42,6 +42,7 @@ public class AlfaAdapter extends RecyclerView.Adapter<AlfaAdapter.alfaViewHolder
         return alfaArrayList.size();
     }
 
+
     public static class alfaViewHolder extends RecyclerView.ViewHolder {
 
         TextView alfaN;

@@ -43,8 +43,8 @@ public class Fruit extends AppCompatActivity {
     };
 
     RecyclerView recyclerView;
-    FruitAdaptor fruitAdaptor;
-    ArrayList<String>fruitArrayList;
+//    FruitAdaptor fruitAdaptor;
+//    ArrayList<String>fruitArrayList;
 
 
     @Override

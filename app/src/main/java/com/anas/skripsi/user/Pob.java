@@ -79,26 +79,26 @@ public class Pob extends AppCompatActivity {
 
 
         imageView = findViewById(R.id.ivpob);
-        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+//        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent motionEvent) {
+//        scaleGestureDetector.onTouchEvent(motionEvent);
+//        return true;
+//    }
+//
+//    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+//        @Override
+//        public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
+//            mScaleFactor *= scaleGestureDetector.getScaleFactor();
+//            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f));
+//            imageView.setScaleX(mScaleFactor);
+//            imageView.setScaleY(mScaleFactor);
+//            return true;
+//        }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        scaleGestureDetector.onTouchEvent(motionEvent);
-        return true;
-    }
-
-    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
-        @Override
-        public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
-            mScaleFactor *= scaleGestureDetector.getScaleFactor();
-            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f));
-            imageView.setScaleX(mScaleFactor);
-            imageView.setScaleY(mScaleFactor);
-            return true;
-        }
-
-    }
+//    }
     }

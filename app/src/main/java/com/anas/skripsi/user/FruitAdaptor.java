@@ -37,15 +37,11 @@ public class FruitAdaptor extends RecyclerView.Adapter<FruitAdaptor.FruitViewHol
     @Override
     public void onBindViewHolder(@NonNull FruitViewHolder holder, int position) {
 
-//        FruitModel tes = fruitModel.get(position);
-//        String f = fruitModel.get(position);
         FruitModel f = fruitModel.get(position);
 
         holder.tv_fruit.setText(f.fruit_name);
         Picasso.get().load(f.fruit_image_urls).resize(120,60).into(holder.img_fruit);
-//        holder.tv_fruit.setText((CharSequence) tes);
-//        Picasso.get().load(String.valueOf(tes)).resize(120,60).into(holder.img_fruit);
-//
+
   }
 
 
