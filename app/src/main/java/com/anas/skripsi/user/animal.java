@@ -15,11 +15,13 @@ import java.util.Objects;
 public class animal extends AppCompatActivity {
 
     private final String[] animal_name = {
-            "Donut"
+            "camel = unta",
+            ""
     };
 
     private final String[] animal_image_urls = {
-            "https://banner2.cleanpng.com/20190115/rxy/kisspng-clip-art-drawing-portable-network-graphics-image-c-other-club-penguin-cutouts-5c3d8227646a92.3012681215475348874113.jpg"
+            "https://img2.pngdownload.id/20180511/ajq/kisspng-camel-animation-clip-art-5af62d1316dbc1.8310576215260828350936.jpg",
+            ""
     };
 
 
