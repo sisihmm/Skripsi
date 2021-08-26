@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anas.skripsi.R;
@@ -44,6 +46,10 @@ public class animal extends AppCompatActivity {
 
     TextView tviewanimal;
 
+    //musik
+    MediaPlayer alfamusic;
+    ImageView play, stop;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,21 @@ public class animal extends AppCompatActivity {
         ArrayList amodel = animalku();
         AnimalAdapter adaptor = new AnimalAdapter(getApplicationContext(),amodel);
         recyclerView.setAdapter(adaptor);
+
+        //musik
+
+        alfamusic = MediaPlayer.create(this, R.raw.alfa);
+        play = findViewById(R.id.btnPlay);
+        stop = findViewById(R.id.btnStop);
+
+        play.setOnClickListener(view -> {
+            alfamusic.start();
+        });
+
+        stop.setOnClickListener(view -> {
+            alfamusic.stop();
+            alfamusic = MediaPlayer.create(this, R.raw.alfa);
+        });
 
         //back
                     Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

@@ -36,7 +36,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="463dp"
+            android:layout_height="354dp"
             android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -50,7 +50,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal" />
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/btnPlay"
+                android:layout_width="77dp"
+                android:layout_height="59dp"
+                android:layout_marginLeft="50dp"
+                android:background="@mipmap/playkuy_foreground" />
+
+            <ImageView
+                android:id="@+id/btnStop"
+                android:layout_width="77dp"
+                android:layout_height="59dp"
+                android:layout_marginLeft="50dp"
+                android:background="@mipmap/stopkuy_foreground" />
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>
