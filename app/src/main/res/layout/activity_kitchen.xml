@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.animal">
+    tools:context=".user.kitchen">
+
 
     <View
-        android:id="@+id/bg_top_header7"
+        android:id="@+id/bg_top_header8"
         android:layout_width="163dp"
         android:layout_height="195dp"
         android:background="@mipmap/animal_foreground"
@@ -22,10 +23,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="196dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvieanimal"
+                android:id="@+id/tv_kitchen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="162dp"
@@ -40,7 +41,7 @@
             android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/reanimal"
+                android:id="@+id/rekitchen"
                 android:layout_width="match_parent"
                 android:layout_height="444dp"
                 tools:listitem="@layout/support_simple_spinner_dropdown_item" />

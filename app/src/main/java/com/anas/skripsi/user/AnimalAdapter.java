@@ -39,7 +39,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.animalView
         AnimalModel f = animalModel.get(position);
 
         holder.tv_animal.setText(f.img_name);
-        Picasso.get().load(f.img_animal).resize(120,60).into(holder.imgee_animal);
+//        Picasso.get().load(f.img_animal).resize(120,60).into(holder.imgee_animal);
+        Picasso.get().load(f.img_animal).into(holder.imgee_animal);
 
     }
 

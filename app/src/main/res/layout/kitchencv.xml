@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="60dp"
-            android:id="@+id/img_vahicle"
+            android:id="@+id/img_kitchen"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"/>
@@ -24,10 +24,10 @@
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_vahicle"
+            android:id="@+id/tv_kitchen"
             android:textStyle="bold"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/img_vahicle" />
+            android:layout_toRightOf="@+id/img_kitchen" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
