@@ -25,7 +25,19 @@ public class animal extends AppCompatActivity {
             "dog = anjing",
             "donkey = keledai",
             "dove = burung merpati",
-            "duck = bebek"
+            "duck = bebek",
+            "goat = kambing",
+            "goldfish = ikan mas koki",
+            "goose = angsa",
+            "guinea pig = marmut",
+            "hamster = hamster",
+            "horse = kuda",
+            "pig = babi",
+            "sheep = domba",
+            "rabbit = kelinci",
+            "pigeon = burung dara",
+            "turtle = kura-kura",
+            "turkey = ayam kalkun"
     };
 
     private final String[] animal_image_urls = {
@@ -37,7 +49,19 @@ public class animal extends AppCompatActivity {
             "https://img2.pngdownload.id/20180419/atq/kisspng-dog-puppy-cartoon-clip-art-the-dog-png-5ad8310982f867.1422060815241177695365.jpg",
             "https://e7.pngegg.com/pngimages/305/921/png-clipart-cartoon-donkey-donkey-little-donkey.png",
             "https://png.pngtree.com/png-clipart/20210308/original/pngtree-pigeon-seagull-bird-flying-bird-homing-pigeon-birds-poultry-cartoon-vector-png-image_5755834.jpg",
-            "https://i.pinimg.com/736x/76/22/f3/7622f3dee575dd89f6f6ee446794b1b4.jpg"
+            "https://i.pinimg.com/736x/76/22/f3/7622f3dee575dd89f6f6ee446794b1b4.jpg",
+            "https://w7.pngwing.com/pngs/34/464/png-transparent-goat-cartoon-arabic-gum-mammal-cow-goat-family-sheep.png",
+            "https://w7.pngwing.com/pngs/322/485/png-transparent-koi-pond-goldfish-carp-koi-aquarium-cartoon-pond.png",
+            "https://w7.pngwing.com/pngs/230/372/png-transparent-swan-duck-domestic-goose-cartoon-big-white-goose-cartoon-character-other-animals.png",
+            "https://www.pngfind.com/pngs/m/663-6639641_guinea-pig-png-marmut-kartun-transparent-png.png",
+            "https://img2.pngdownload.id/20180313/chq/kisspng-hamster-kitten-whiskers-clip-art-cute-hamster-meng-meng-da-da-5aa7645d8f0f98.102998231520919645586.jpg",
+            "https://e7.pngegg.com/pngimages/559/416/png-clipart-sheep-goat-cartoon-live-cute-horse-s-horse-mammal.png",
+            "https://e7.pngegg.com/pngimages/124/367/png-clipart-pig-cartoon-pig-mammal-animals.png",
+            "https://img2.pngdownload.id/20191227/ogs/transparent-sheep-sheep-animal-figure-cartoon-livestock-5e05f7937c60a2.4401135615774493635095.jpg",
+            "https://w1.pngwing.com/pngs/310/192/png-transparent-rabbit-cartoon-rabbits-and-hares-hare-snout-animation-animal-figure.png",
+            "https://cdn.pixabay.com/photo/2012/05/07/01/48/pigeon-47505_640.png",
+            "https://png.pngtree.com/png-clipart/20201024/ourlarge/pngtree-hand-drawn-cartoon-tortoise-clipart-png-image_2375744.jpg",
+            "https://w7.pngwing.com/pngs/634/196/png-transparent-turkey-meat-free-content-turkey-cartoon-s-computer-galliformes-chicken.png"
     };
 
 
