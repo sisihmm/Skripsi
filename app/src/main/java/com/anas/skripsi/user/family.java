@@ -18,12 +18,12 @@ public class family extends AppCompatActivity {
 
     private final String[] family_name = {
             "Donut",
-            ""
+            
     };
 
     private final String[] family_image_urls = {
             "https://banner2.cleanpng.com/20190115/rxy/kisspng-clip-art-drawing-portable-network-graphics-image-c-other-club-penguin-cutouts-5c3d8227646a92.3012681215475348874113.jpg",
-            ""
+
     };
 
     RecyclerView recyclerView;
