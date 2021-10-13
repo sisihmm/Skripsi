@@ -80,7 +80,7 @@ public class vahicle extends AppCompatActivity {
                 "di bangku sekolah dasar bahkan saat kita di taman\n"+
                 "kanak-kanak.\n"+
                 "\n"+
-                "Cara Membaca Alphabet dalam Bahasa Inggris");
+                "Cara Mengenal nama kendaraan dalam bahasa inggris");
 
         recyclerView = findViewById(R.id.revahicle);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

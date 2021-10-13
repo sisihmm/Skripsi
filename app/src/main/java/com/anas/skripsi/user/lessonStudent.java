@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class LessonStudent extends AppCompatActivity {
 
-    CardView alfabet,fruit,pob,animal,family,vahicle;
+    CardView alfabet,fruit,pob,animal,family,vahicle,kitchen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class LessonStudent extends AppCompatActivity {
         animal = findViewById(R.id.cvanimal);
         family = findViewById(R.id.cvfamily);
         vahicle = findViewById(R.id.cvvahicle);
+        kitchen = findViewById(R.id.cvkitchen);
 
         alfabet.setOnClickListener(view -> {
             Intent intent = new Intent(LessonStudent.this, LessonAlfabet.class);
@@ -36,16 +37,19 @@ public class LessonStudent extends AppCompatActivity {
             Intent intent = new Intent(LessonStudent.this, family.class);
             startActivity(intent);
         });
-
         animal.setOnClickListener(view -> {
                     Intent intent = new Intent(LessonStudent.this, animal.class);
                     startActivity(intent);
                 });
-
         vahicle.setOnClickListener(view -> {
             Intent intent = new Intent(LessonStudent.this, vahicle.class);
             startActivity(intent);
         });
+        kitchen.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonStudent.this, kitchen.class);
+            startActivity(intent);
+        });
+
 
 
         pob.setOnClickListener(view -> {

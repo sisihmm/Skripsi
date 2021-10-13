@@ -37,7 +37,7 @@ public class animal extends AppCompatActivity {
             "rabbit = kelinci",
             "pigeon = burung dara",
             "turtle = kura-kura",
-            "turkey = ayam kalkun"
+            "turkey = ayam kalkunn"
     };
 
     private final String[] animal_image_urls = {
@@ -81,7 +81,7 @@ public class animal extends AppCompatActivity {
         setContentView(R.layout.activity_animal);
 
     tviewanimal = findViewById(R.id.tvieanimal);
-    tviewanimal.setText("agjavshcvajcvascv.");
+    tviewanimal.setText("Nama-nama Hewan dalam bahasa inggris.");
 
 
     recyclerView = findViewById(R.id.reanimal);

@@ -11,7 +11,7 @@
         android:id="@+id/bg_top_header8"
         android:layout_width="163dp"
         android:layout_height="195dp"
-        android:background="@mipmap/animal_foreground"
+        android:background="@mipmap/kitchen_foreground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
